@@ -14,32 +14,42 @@ namespace DataStructures
             Console.WriteLine("press 5 for mergesort");
             Console.WriteLine("enter choice:");
             int choice = Convert.ToInt32(Console.ReadLine());
-            switch(choice)
+            switch (choice)
             {
-                    //insertion sort
+                //insertion sort
                 case 1:
                     Insertionsort insertionsort = new Insertionsort();
                     insertionsort.InsertionSorting();
                     break;
-                    //bubble sort
+                //bubble sort
                 case 2:
                     Bubblesort bubblesort = new Bubblesort();
                     bubblesort.Bubblesorting();
                     break;
-                    //permutation of string
+                //permutation of string
                 case 3:
                     string str = "ABC";
                     int n = str.Length;
                     Console.WriteLine(" string is:");
                     PermutationofString.Permute(str, 0, n - 1);
                     Console.WriteLine("after recursive string is:");
-                    PermutationofString.Recursive(str,"A");
+                    PermutationofString.Recursive(str, "A");
                     break;
+                //binary search 
+                case 4:
+                    String[] arr = { "akhila", "anu", "jhon", "ram" };
+                    String x = "ram";
+                    int result = BinarySearch.Binary(arr, x);
+                    if (result == -1)
+                        Console.WriteLine("Element not found");
+                    else
+                        Console.WriteLine("Element found at index " + result);
+                    break;
+            }            
 
 
-            }          
+        }          
 
-        }
-       
+               
     }
 }
