@@ -12,6 +12,7 @@ namespace DataStructures
             Console.WriteLine("press 3 for permutation of string");
             Console.WriteLine("press 4 for binarysearch");
             Console.WriteLine("press 5 for Primenumbers");
+            Console.WriteLine("press 6 for Anagram");
             Console.WriteLine("enter choice:");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
@@ -48,6 +49,11 @@ namespace DataStructures
                     //primenumbers range
                 case 5:                    
                     PrimeNumbersRange.print();
+                    break;
+                //Anagram
+                case 6:
+                   // Anagram anagram = new Anagram();
+                    Anagram.CheckAnagram();
                     break;
             }            
 
