@@ -9,9 +9,9 @@ namespace DataStructures
             Console.WriteLine("welcome to data structures problems");
             Console.WriteLine("press 1 for insertion sort:");
             Console.WriteLine("press 2 for bubblesort");
-            Console.WriteLine("press 3 for mergesort");
-            Console.WriteLine("press 2 for binarysearch");
-            Console.WriteLine("press 3 for permutation");
+            Console.WriteLine("press 3 for permutation of string");
+            Console.WriteLine("press 4 for binarysearch");
+            Console.WriteLine("press 5 for mergesort");
             Console.WriteLine("enter choice:");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch(choice)
@@ -26,14 +26,20 @@ namespace DataStructures
                     Bubblesort bubblesort = new Bubblesort();
                     bubblesort.Bubblesorting();
                     break;
-                    //merge sort
+                    //permutation of string
                 case 3:
+                    string str = "ABC";
+                    int n = str.Length;
+                    Console.WriteLine(" string is:");
+                    PermutationofString.Permute(str, 0, n - 1);
+                    Console.WriteLine("after recursive string is:");
+                    PermutationofString.Recursive(str,"A");
                     break;
 
 
             }          
 
         }
-            
+       
     }
 }

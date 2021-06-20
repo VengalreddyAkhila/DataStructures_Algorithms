@@ -30,57 +30,56 @@ namespace DataStructures
                     Sort(arr, low, mid);
                     Sort(arr, mid + 1, high);
 
-                  //  Merge(array,low, mid, high);
+                    //Merge(array,low, mid, high);
                 }
 
              }
-            static void Merge(int[] array, int low, int mid, int high)
+             static string[] Merge(string[] array, int low, int mid, int high)
             {
-                int size1 = mid - low + 1; //defining Size of the array
-                int size2 = high - mid;
+                int ithElement = low;
+                int jthElement = mid + 1;
+                int kthElement = low;
+                string[] mergedArray = new string[8];
 
-                int[] firstArray = new int[size1];// create sub-array 
-                int[] secondArray = new int[size2];
-
-                for (int i = 0; i < size1; i++)
+                while (ithElement <= mid && jthElement <= high)
                 {
-                    firstArray[i] = array[low + i];
-                }
-                for (int j = 0; j < size2; j++)
-                {
-                    secondArray[j] = array[mid + 1 + j];
-                }
-
-                int x = 0, y = 0;
-                int k = low;
-                while (x < size1 && y < size2)
-                {
-                    if (firstArray[x] > secondArray[y])
+                    if ((array[ithElement].CompareTo(array[jthElement])) < 0)
                     {
-                        array[k] = secondArray[y];
-                        y++;
+                        mergedArray[kthElement] = array[ithElement];
+                        ithElement++;
                     }
                     else
                     {
-                        array[k] = firstArray[x];
-                        x++;
+                        mergedArray[kthElement] = array[jthElement];
+                        jthElement++;
                     }
-                    k++;
+                    kthElement++;
                 }
-                while (x < size1)
+                if (ithElement > mid)
                 {
-                    array[k] = firstArray[x];
-                    x++;
-                    k++;
+                    while (jthElement <= high)
+                    {
+                        mergedArray[kthElement] = array[jthElement];
+                        jthElement++;
+                        kthElement++;
+                    }
                 }
-                while (y < size2)
+                else
                 {
-                    array[k] = secondArray[y];
-                    y++;
-                    k++;
+                    while (ithElement <= mid)
+                    {
+                        mergedArray[kthElement] = array[ithElement];
+                        ithElement++;
+                        kthElement++;
+                    }
                 }
+                for (kthElement = low; kthElement < high; kthElement++)
+                {
+                    array[kthElement] = mergedArray[kthElement];
+                }
+                return mergedArray;
             }
-        }
+         }
     }
 }
 
