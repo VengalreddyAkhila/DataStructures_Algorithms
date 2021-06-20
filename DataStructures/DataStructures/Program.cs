@@ -11,7 +11,7 @@ namespace DataStructures
             Console.WriteLine("press 2 for bubblesort");
             Console.WriteLine("press 3 for permutation of string");
             Console.WriteLine("press 4 for binarysearch");
-            Console.WriteLine("press 5 for mergesort");
+            Console.WriteLine("press 5 for Primenumbers");
             Console.WriteLine("enter choice:");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
@@ -44,6 +44,10 @@ namespace DataStructures
                         Console.WriteLine("Element not found");
                     else
                         Console.WriteLine("Element found at index " + result);
+                    break;
+                    //primenumbers range
+                case 5:                    
+                    PrimeNumbersRange.print();
                     break;
             }            
 
